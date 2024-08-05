@@ -1,0 +1,23 @@
+{
+    "name": "toggenation/dns-propagation-check",
+    "description": "Check if DNS has propagated yet",
+    "license": "MIT",
+    "autoload": {
+        "files": [
+            "hosts_to_check.php"
+        ],
+        "psr-4": {
+            "Toggenation\\DnsPropagationCheck\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "James McDonald",
+            "email": "james@toggen.com.au"
+        }
+    ],
+    "require": {},
+    "scripts": {
+        "check": "Toggenation\\DnsPropagationCheck\\DnsPropagationCheck::execute"
+    }
+}
