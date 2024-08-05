@@ -20,9 +20,9 @@ class DnsPropagationCheck
     public static function check($host, $type)
     {
         if (checkdnsrr($host, $type)) {
-            echo "$type for $host found\n";
+            echo "$type for $host FOUND\n";
         } else {
-            echo "$type for $host NOT found\n";
+            echo "$type for $host NOT_FOUND\n";
         }
     }
 }

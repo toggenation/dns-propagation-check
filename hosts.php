@@ -1,3 +1,3 @@
 <?php
 // fill this array with the hosts to check
-return  ['lisaspallete.com', 'toggen.com.au'];
+return  ['lisaspalette.com', 'toggen.com.au'];
