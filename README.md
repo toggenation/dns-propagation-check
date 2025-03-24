@@ -27,3 +27,30 @@ AAAA for toggen.com.au found
 
 ```
 
+
+## Check for name server change
+
+If you are migrating domains to a new provider or changing nameservers run `composer ns domain-to-check new-nameserver` e.g.
+
+```sh
+composer ns toggen.com.au ns1.namesever.net.au
+
+#output
+> Toggenation\DnsPropagationCheck\DnsPropagationCheck::dnsPropagationCheck
+DNS still heather.ns.cloudflare.com & rayden.ns.cloudflare.com for toggen.com.au
+
+
+composer ns toggen.com.au ns1.namesever.net.au
+#output
+> Toggenation\DnsPropagationCheck\DnsPropagationCheck::dnsPropagationCheck
+DNS has changed to ns1.namesever.net.au for toggen.com.au
+
+```
+Add to crontab
+```sh
+# no email
+8 2 * * * composer -d /path/to/dns-propagation-check ns > /dev/null 2>&1
+
+# with email
+8 2 * * * composer -d /path/to/dns-propagation-check ns
+```
