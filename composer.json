@@ -16,8 +16,11 @@
             "email": "james@toggen.com.au"
         }
     ],
-    "require": {},
+    "require": {
+        "composer/composer": "^2.8"
+    },
     "scripts": {
-        "check": "Toggenation\\DnsPropagationCheck\\DnsPropagationCheck::execute"
+        "check": "Toggenation\\DnsPropagationCheck\\DnsPropagationCheck::execute",
+        "ns": "Toggenation\\DnsPropagationCheck\\DnsPropagationCheck::dnsPropagationCheck"
     }
 }
