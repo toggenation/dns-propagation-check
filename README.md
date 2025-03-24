@@ -46,11 +46,14 @@ composer ns toggen.com.au ns1.namesever.net.au
 DNS has changed to ns1.namesever.net.au for toggen.com.au
 
 ```
-Add to crontab
+Add to crontab.  Check at 9AM and 4PM
 ```sh
-# no email
-8 2 * * * composer -d /path/to/dns-propagation-check ns > /dev/null 2>&1
+# no email STDERR & STDOUT piped to null
+0 9,16 * * * composer -d /path/to/dns-propagation-check ns > /dev/null 2>&1
 
-# with email
-8 2 * * * composer -d /path/to/dns-propagation-check ns
+# with email only good output STDOUT
+0 9,16 * * * composer -d /path/to/dns-propagation-check ns 2> /dev/null
+
+# with email STDERR and STDOUT
+0 9,16 * * * composer -d /path/to/dns-propagation-check ns 
 ```
